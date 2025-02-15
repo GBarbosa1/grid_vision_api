@@ -1,3 +1,5 @@
 {
-    "igpm_base_endpoint":"https://api.bcb.gov.br/dados/serie/bcdata.sgs.4175/dados?formato=json&dataInicial={data_inicio}&dataFinal={data_final}"
+    "igpm_base_endpoint":"https://api.bcb.gov.br/dados/serie/bcdata.sgs.4175/dados?formato=json&dataInicial={data_inicio}&dataFinal={data_final}",
+    "ipca_base_endpoint":"https://api.bcb.gov.br/dados/serie/bcdata.sgs.4449/dados?formato=json&dataInicial={data_inicio}&dataFinal={data_final}",
+    "cambio":"https://economia.awesomeapi.com.br/json/daily/{currency_01}-{currency_02}/360?start_date={data_inicio}&end_date={data_final}"
 }

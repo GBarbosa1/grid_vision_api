@@ -8,7 +8,7 @@ class RequestWrapper:
     def get(self, endpoint: str = None, params: dict = None, headers: dict = None):
         url = f"{endpoint}"
         try:
-            response = requests.get(url, params=params, headers=headers)
+            response = requests.get(url, params=params, headers=headers, verify= False)
             response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as e:
