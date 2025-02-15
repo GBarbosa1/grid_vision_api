@@ -1,0 +1,3 @@
+{
+    "igpm_base_endpoint":"https://api.bcb.gov.br/dados/serie/bcdata.sgs.4175/dados?formato=json&dataInicial={data_inicio}&dataFinal={data_final}"
+}
