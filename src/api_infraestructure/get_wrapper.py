@@ -1,11 +1,12 @@
 import requests
+import logging
 
 class RequestWrapper:
-    def __init__(self, base_url: str):
-        self.base_url = base_url
+    def __init__(self):
+        self.base_url = None
 
-    def get(self, endpoint: str, params: dict = None, headers: dict = None):
-        url = f"{self.base_url}{endpoint}"
+    def get(self, endpoint: str = None, params: dict = None, headers: dict = None):
+        url = f"{endpoint}"
         try:
             response = requests.get(url, params=params, headers=headers)
             response.raise_for_status()
