@@ -56,3 +56,18 @@ def read_filters(start_date: Optional[str] = Query(None), end_date: Optional[str
         return payload, cambio
     except ValueError:
         return {"error": "Invalid date format. Use dd/mm/yyyy."}
+    
+@app.get("/geracao/")
+def read_filters(start_date: Optional[str] = Query(None), end_date: Optional[str] = Query(None), currency1: Optional[str] = Query(None), currency2: Optional[str] = Query(None)):
+    try:
+        dados_geracao = os.environ["dados_geracao_energia"]
+        start_date = start_date.replace("/","")
+        end_date = end_date.replace("/","")
+        dados_geracao = dados_geracao.replace('{data_inicio}',start_date)
+        dados_geracao = dados_geracao.replace('{data_final}',end_date)
+        dados_geracao = dados_geracao.replace('{currency_01}',currency1)
+        dados_geracao = dados_geracao.replace('{currency_02}',currency2)
+        payload = api_wrapper.get(endpoint=dados_geracao)
+        return payload
+    except ValueError:
+        return {"error": "Invalid date format. Use dd/mm/yyyy."}

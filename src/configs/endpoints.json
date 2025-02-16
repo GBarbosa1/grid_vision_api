@@ -1,5 +1,6 @@
 {
     "igpm_base_endpoint":"https://api.bcb.gov.br/dados/serie/bcdata.sgs.4175/dados?formato=json&dataInicial={data_inicio}&dataFinal={data_final}",
     "ipca_base_endpoint":"https://api.bcb.gov.br/dados/serie/bcdata.sgs.4449/dados?formato=json&dataInicial={data_inicio}&dataFinal={data_final}",
-    "cambio":"https://economia.awesomeapi.com.br/json/daily/{currency_01}-{currency_02}/360?start_date={data_inicio}&end_date={data_final}"
+    "cambio":"https://economia.awesomeapi.com.br/json/daily/{currency_01}-{currency_02}/360?start_date={data_inicio}&end_date={data_final}",
+    "dados_geracao_energia":"https://dadosabertos.aneel.gov.br/api/3/action/datastore_search_sql?sql=SELECT * from "20ef769f-a072-489d-9df4-c834529f8a78" where "DatGeracaoConjuntoDados"::date >= '{data_inicial}' and "DatGeracaoConjuntoDados"::date <= '{data_final}'"
 }
